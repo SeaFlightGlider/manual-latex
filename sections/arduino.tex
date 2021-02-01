@@ -1,0 +1,34 @@
+\chapter*{Arduino}
+\section{What is Arduino?}
+Arduino is an open-source electronics platform based on easy-to-use hardware and software. \citep{Arduino}. You'll often hear "Arduino" be used in reference to the actual software, the language, or a microcontroller that is programmed through Arduino. Today, some microcontrollers can operate off of multiple languages such as MicroPython or Rust. To aid in reducing confusion, this manual will use "Arduino" in reference to the software and programming language, while the term "board" or "microcontroller" will be used in reference to the actual hardware that uses Arduino.
+
+\section{How do I access the Arduino software?}
+The Arduino integrated development environment (IDE) is a one-stop-shop for all your microcontroller programming needs. It is recommended that you download the newest version of the \href{https://www.arduino.cc/en/software}{Arduino IDE} directly from the Arduino website and follow along with the default setup. The Arduino IDE has some advantages.
+
+\begin{itemize}
+	\item It is the official Arduino software.
+	\item It is open source.
+	\item It simplifies adding non-native libraries to your code.
+	\item It has a built-in serial terminal for all your data printing needs.
+	\item It tells you if your code doesn't compile correctly.
+	\item It's available in English, Deutsch, and Portugu\^{e}s.
+\end{itemize}
+
+
+\section{Navigating Sea Flight Glider Sketches}
+In order to get your code onto a board, you must first throw it into a sketch. If you don't have much programming experience, you can think of a sketch as a set of instructions that the board follows from point A to point B. There two main functions that govern how a board interprets the code. The setup function is run once, while the loop function is looped continuously until the end of time or when power is no longer supplied, whichever comes first. In the case of the SFG, the sensors and engine are initialized or primed during the setup function, then the loop function continuously adjusts the glider's operating state until the glider is powered down.
+
+If you look at the operating code sketch folder for the SFG, you'll notice that there are multiple sketches. Actually, these are all part of a single sketch. The Arduino IDE allows you to split code into multiple files to make it easier maintain and read. Within the main SFG file, you'll find the setup and loop functions, which then reference other functions found in other files. In order to simplify file navigation, the files are named by the sensor ID or the function of the code within the file.
+
+\section{Sea Flight Glider Arduino Libraries}
+The SFG utilizes a number of open source libraries, many of which simplify sensor integration. A complete list of libraries can be found below. The quickest way to install these libraries is through the Arduino IDE. Navigate to Sketch $\rightarrow$ Include Library $\rightarrow$ Manage Libraries and use the search function to install each of the following.
+
+\begin{itemize}
+	\item SparkFunBME280
+	\item SFE\_HMC6343
+	\item Adafruit\_NeoPixel
+	\item SFE\_Ublox\_Arduino\_Library
+	\item RTClib
+	\item FreeRTOS\_SAMD51
+	\item VL6180
+\end{itemize}
